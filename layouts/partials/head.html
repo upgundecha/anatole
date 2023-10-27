@@ -209,9 +209,10 @@
 
 
   <!-- Open Graph -->
-  {{ template "_internal/opengraph.html" . }}
-
+  <!-- {{ template "_internal/opengraph.html" . }} -->
+  {{ partial "configurable_opengraph.html" . }} 
 
   <!-- Schema.org-->
   {{ partial "schema.html" . }}
+  <meta name="keywords" content={{ delimit .Keywords " " }} />
 </head>
