@@ -205,8 +205,8 @@
 
   <!-- Twitter Cards -->
   <!--  -->
-  {{ with .Params.twitterCard }}
-  {{ partial "configurable_twitter_cards.html" . }}
+  {{ with $.Params.twitterCard }}
+    {{ partial "configurable_twitter_cards.html" . }}
   {{ else }}
     {{ template "_internal/twitter_cards.html" . }}
   {{ end }}
