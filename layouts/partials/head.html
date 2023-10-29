@@ -204,13 +204,19 @@
 
 
   <!-- Twitter Cards -->
-  <!-- {{ template "_internal/twitter_cards.html" . }} -->
+  <!--  -->
+  {{ with .Params.twitterCard }
   {{ partial "configurable_twitter_cards.html" . }}
-
+  {{ else }}
+    {{ template "_internal/twitter_cards.html" . }}
+  {{ end }}
 
   <!-- Open Graph -->
-  <!-- {{ template "_internal/opengraph.html" . }} -->
-  {{ partial "configurable_opengraph.html" . }} 
+  {{ with .Params.openGraph }
+    {{ partial "configurable_opengraph.html" . }} 
+  {{ else }}
+    {{ template "_internal/opengraph.html" . }}
+  {{ end }}
 
   <!-- Schema.org-->
   {{ partial "schema.html" . }}
