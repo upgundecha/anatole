@@ -205,14 +205,14 @@
 
   <!-- Twitter Cards -->
   <!--  -->
-  {{ with .Params.twitterCard }
+  {{ with .Params.twitterCard }}
   {{ partial "configurable_twitter_cards.html" . }}
   {{ else }}
     {{ template "_internal/twitter_cards.html" . }}
   {{ end }}
 
   <!-- Open Graph -->
-  {{ with .Params.openGraph }
+  {{ with .Params.openGraph }}
     {{ partial "configurable_opengraph.html" . }} 
   {{ else }}
     {{ template "_internal/opengraph.html" . }}
