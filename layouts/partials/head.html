@@ -207,15 +207,15 @@
   <!-- {{ template "_internal/twitter_cards.html" . }} -->
   {{ partial "configurable_twitter_cards.html" . }}
   
-  <!-- Open Graph -->
-  {{ template "_internal/opengraph.html" . }}
-
   <!-- Custom Open Graph Image -->
   {{ if .Params.custom_og_image }}
    <!-- Custom OpenGraph image from frontmatter -->
    <meta property="og:image" content="{{ absURL .Params.custom_og_image }}">
   {{ end }}
 
+  <!-- Open Graph -->
+  {{ template "_internal/opengraph.html" . }}
+  
   <!-- Schema.org-->
   {{ partial "schema.html" . }}
   <meta name="keywords" content={{ delimit .Keywords "," }} />
